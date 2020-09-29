@@ -98,13 +98,13 @@ WARNING!!! WARNING!!!
     var firstLetter = name.charAt(0).toLowerCase();
 
     if(firstLetter === "j"){
-      return "Good Bye " + name;
+      return byeSpeaker.speakSimple(name);
     }
     else{
-      return "Hello " + name;
+      return helloSpeaker.speakSimple(name);
     }
   }
-
+ 
   const newNamesArray = names.map(name => namesToGreetings(name));
 
   console.log("\nJHU Additional Step 2b:");
