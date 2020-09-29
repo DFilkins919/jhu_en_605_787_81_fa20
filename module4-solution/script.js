@@ -43,10 +43,14 @@ WARNING!!! WARNING!!!
   // 'speak' method.
   // See Lecture 50, part 1
   
-  console.log("Step 10 using helloSpeaker's speak method:");
-  for (var i = 0; i < names.length; i++) {
-    helloSpeaker.speak(names[i]);
-  }
+  // Commented out below as assignment said only console output should 
+  // be steps 12, JHU Additional Step 2, and Optional Step 3
+  // Uncommmenting will work
+
+  // console.log("Step 10 using helloSpeaker's speak method:");
+  // for (var i = 0; i < names.length; i++) {
+  //   helloSpeaker.speak(names[i]);
+  // }
   
   console.log("\nStep 12:")
   for (var i = 0; i < names.length; i++) {
@@ -75,7 +79,7 @@ WARNING!!! WARNING!!!
     }
   }
 
-  //JHU Additional Step 2a Test
+  // JHU Additional Step 2a Test
   
   // console.log("\nJHU Additional Step 2a using byeSpeaker's speakSimple method:");
   // for(var i = 0; i < names.length; i++){
@@ -83,12 +87,12 @@ WARNING!!! WARNING!!!
   //   console.log(byeSpeaker.speakSimple(names[i]));
   // }
 
-  //JHU Additional Step
-  //2b. In the main script.js, use the map function to create an array based on the names 
-  //array. This array will contain the greetings based on the names with the same rules as implemented 
-  //previously. The function passed into the map function should not be an inline function, i.e., separate 
-  //it into its own named function and pass it into the map function as a value. The end result should be 
-  //that the list prints out twice in the browser console after you complete this part.
+  // JHU Additional Step
+  // 2b. In the main script.js, use the map function to create an array based on the names 
+  // array. This array will contain the greetings based on the names with the same rules as implemented 
+  // previously. The function passed into the map function should not be an inline function, i.e., separate 
+  // it into its own named function and pass it into the map function as a value. The end result should be 
+  // that the list prints out twice in the browser console after you complete this part.
   
   function namesToGreetings(name){
     var firstLetter = name.charAt(0).toLowerCase();
@@ -108,11 +112,11 @@ WARNING!!! WARNING!!!
     console.log(newNamesArray[i]);
   }
 
-  //JHU Optional Step
-  //3b. In the main script.js, use the reduce function to create 2 separate arrays: one with all the ‘hello’ 
-  //greetings and another with all the good bye greetings. Then, loop over each array (obviously separately) 
-  //and print out the greetings to the console with console.log. You are required to use {hello: [], bye: []} 
-  //as your initialValue. 
+  // JHU Optional Step
+  // 3b. In the main script.js, use the reduce function to create 2 separate arrays: one with all the ‘hello’ 
+  // greetings and another with all the good bye greetings. Then, loop over each array (obviously separately) 
+  // and print out the greetings to the console with console.log. You are required to use {hello: [], bye: []} 
+  // as your initialValue. 
 
   const reduced_names = names.reduce(
     function(accumulator, currentValue, currentIndex){ 
@@ -121,12 +125,11 @@ WARNING!!! WARNING!!!
       return accumulator;
   }, {hello: [], bye: []} );
   
-  console.log("\nJHU Optional Step 3b Hello:")
+  console.log("\nJHU Optional Step 3b Hello and Good Bye:")
   for(var i = 0; i < reduced_names.hello.length; i++){
     console.log(reduced_names.hello[i]);
   }
 
-  console.log("\nJHU Optional Step 3b Bye:")
   for(var i = 0; i < reduced_names.bye.length; i++){
     console.log(reduced_names.bye[i]);
   }

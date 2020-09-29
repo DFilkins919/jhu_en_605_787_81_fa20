@@ -28,16 +28,16 @@
   // DO NOT attach the speakWord variable to the 'byeSpeaker' object.
   var speakWord = "Good Bye";
 
-  //Instructions did not say to remove speak function and script.js mentions using this 
-  //as an option in step 10 but this is not reachable due to step 6
+  // Instructions did not say to remove speak function and script.js mentions using this 
+  // as an option in step 10 but this is not reachable due to step 6
   function speak(name){
     console.log(speakWord + " " + name)
   }
 
-  //JHU Additional Step
-  //2a. Add another method called speakSimple into the SpeakGoodBye.js and SpeakHello.js 
-  //that is externally exposed just like the speak method is. The speakSimple method should not 
-  //use console.log, but instead should simply return the greeting concatenated to the passed in name argument.
+  // JHU Additional Step
+  // 2a. Add another method called speakSimple into the SpeakGoodBye.js and SpeakHello.js 
+  // that is externally exposed just like the speak method is. The speakSimple method should not 
+  // use console.log, but instead should simply return the greeting concatenated to the passed in name argument.
   
   byeSpeaker.speakSimple = function(name){
     return speakWord + " " + name;
