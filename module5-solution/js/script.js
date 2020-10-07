@@ -183,7 +183,7 @@ function buildAndShowHomeHTML (categories) {
 dc.loadAboutContent = function() {
   showLoading("#main-content");
   $('#main-content').load("/snippets/about.html");
-  setTimeout(randRating, 250);
+  setTimeout(randRating, 1000);
 
   //Error Notes
   //Attempted method three ways but AJAX seemed the safest.
