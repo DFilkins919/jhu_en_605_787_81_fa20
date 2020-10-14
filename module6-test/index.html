@@ -1,0 +1,65 @@
+<!--
+  Step 4
+  Copy the contents of the folder assignment1-starter-code into the newly 
+  created folder.
+-->
+
+<!doctype html>
+
+
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+  <!--
+    Step 5 
+    Import AngularJS into your project by placing a <script> tag right before 
+    the </body> tag.
+  -->
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+
+  <!--
+    Step 6
+    Declare ng-app either on the html or the body element. Name your app 
+    LunchCheck.
+  -->
+<body ng-app="LunchCheck">
+   <!--
+     Step 8
+     Go back to index.html and declare a controller for some portion of your 
+     page that contains the textbox, the button, and the message placeholder.
+   -->
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+         
+         <!--
+           Step 9
+           Annotate the textbox, the button, and the placeholder such that you 
+           can hook in behavior to those elements from your controller.
+        -->
+
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control" ng-model="menuTextBox" 
+             ng-style="{'border-color': borderColor}">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" 
+             ng-click="checkIfTooMuch()">Check If Too Much</button>
+         </div>
+         <div class="form-group message" ng-model="lunchMessage" 
+         ng-style="{color: textColor}">
+           <!-- Your message can go here. -->
+           {{lunchMessage}}
+         </div>
+   </div>
+
+</body>
+</html>
