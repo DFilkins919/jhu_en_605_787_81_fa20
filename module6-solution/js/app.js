@@ -70,12 +70,13 @@ function LunchCheckController($scope) {
         //Remove all white space from string
         //Singular items with space inbetween will still count as one item
         var foodItems = $scope.menuTextBox.replace(/\s/g, "");
-        
+
         //Split the string into an array of food items.
         foodItems = foodItems.split(',');
         
         //Remove the blank entries
-        for(var i = 0; i < foodItems.length; i++) {
+        for(var i = foodItems.length; i >= 0; i--) {
+
             if(foodItems[i] === '') {
                 foodItems.splice(i, 1);
             }
