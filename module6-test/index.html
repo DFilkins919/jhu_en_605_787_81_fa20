@@ -6,7 +6,6 @@
 
 <!doctype html>
 
-
 <html lang="en">
   <head>
     <title>Lunch Checker</title>
@@ -37,7 +36,7 @@
    -->
    <div class="container" ng-controller="LunchCheckController">
      <h1>Lunch Checker</h1>
-         
+    
          <!--
            Step 9
            Annotate the textbox, the button, and the placeholder such that you 
@@ -50,6 +49,20 @@
              class="form-control" ng-model="menuTextBox" 
              ng-style="{'border-color': borderColor}">
          </div>
+         <div class="form-group">
+
+            <!--
+              Optional Step:
+              Put a comment somewhere next to the input textbox stating that 
+              you do NOT consider an empty item, i.e., , , as an item towards 
+              to the count, so whoever is grading your assignment doesn't 
+              erroneously mark that as an error.
+            -->
+
+            <h5><b>NOTE: Empty items, i.e., blank space(s) " " followed by 
+                   comma(s) are not considered towards the count</b>
+            </h5>
+        </div>
          <div class="form-group">
              <button class="btn btn-default" 
              ng-click="checkIfTooMuch()">Check If Too Much</button>
