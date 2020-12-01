@@ -1,0 +1,52 @@
+<!--
+     General Idea.
+     HTML/CSS for the assignment are very simple and I'll leave it up to you to 
+     generate. Again, this class is not about styling, so as long as things are 
+     functional and readable, styling or layout doesn't matter much.
+-->
+
+<!DOCTYPE HTML>
+
+<!--
+     Step 1.
+     Declare ng-app on the html or the body element.
+     Name your app MenuApp
+-->
+<html ng-app="MenuApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Module 9</title>
+    </head>
+
+    <body>
+        <h1>Welcome to our Restaurant!</h1>
+
+        <ui-view></ui-view>
+    </body>
+
+    <!--
+         Import AngularJS and ui-router library into your HTML page. You may 
+         want to simply copy the JS files from the examples/Lecture36/lib folder 
+         of this repository.
+    -->
+    
+     <!--Libraries-->
+     <script src="lib/angular.min.js"></script>
+     <script src="lib/angular-ui-router.min.js"></script>
+
+     <!-- Modules -->
+     <script src="src/data.module.js"></script>
+     <script src="src/menuapp.module.js"></script>
+
+     <!-- Routes -->
+     <script src="src/routes.js"></script>
+     
+     <!-- 'MenuApp' module artifacts-->
+     
+     <script src="src/categories.controller.js"></script>
+     <script src="src/items.controller.js"></script>
+     <script src="src/menudata.service.js"></script>
+     <script src="src/categories.component.js"></script>
+     <script src="src/items.component.js"></script>
+     
+</html>

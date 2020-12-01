@@ -1,0 +1,18 @@
+<!--
+    General Idea.
+    Make sure that if, while viewing the list of menu items for a particular 
+    category, the user copies the URL in the browser's address bar and pastes it 
+    into a new tab or a different browser, that the view is the same as the 
+    original one.
+-->
+
+<h3>Items View</h3>
+
+<ul>
+    <li ng-repeat="item in itemsList.items">
+      {{ item.name }}
+    </li>
+</ul>
+
+<button ui-sref="categories">Return to Categories</button>
+<button ui-sref="home">Return to Home Page</button>
