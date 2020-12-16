@@ -1,0 +1,82 @@
+<!--
+     Modified the lecture 42 form code
+-->
+
+<div class="container text-center">
+    <fieldset>
+        <legend>Sign Up For Our Newsletter</legend>
+        <form name='regForm' novalidate>
+
+          <input type="text" name="firstname" placeholder="Enter your first name"
+            ng-model="firstname"
+            required
+            minlength="1"
+            ng-maxlength="20">
+            <span
+              ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+              First name must be at least 1 character long
+            </span>
+            <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+              First name must not be longer than 10 characters
+            </span>
+            <br>
+
+            <input type="text" name="lastname" placeholder="Enter your last name"
+            ng-model="lastname"
+            required
+            minlength="1"
+            ng-maxlength="20">
+            <span
+              ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+              Last name must be at least 1 character long
+            </span>
+            <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+              Last name must not be longer than 10 characters
+            </span>
+            <br>
+    
+          <input type="email" name="email" placeholder="Email"
+            ng-model="email"
+            required>
+            <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+              Must be a valid email address: handle@domain format
+            </span>
+            <br>
+    
+          <input type="text" name="phone" placeholder="Phone ###-###-####"
+            ng-model="phone"
+            pattern="(\d{3})-(\d{3})-(\d{4})"
+            required>
+            <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+              Phone must be in the format ###-###-####.
+            </span>
+            <br>
+
+          <input type="text" name="shortname" placeholder="Favorite Dish Menu #"
+            ng-model="shortname"
+            required
+            minlength="1"
+            ng-maxlength="5">
+            <span ng-if="(regForm.shortname.$error.minlength || regForm.shortname.$error.required) && regForm.shortname.$touched">
+              Invalid Menu Number.
+            </span>
+            <span ng-if="shortname != null && signUpCtrl.validateShortName(shortname) != true">
+                No such menu number exists.
+            </span>
+            <br>
+        
+            <!-- 
+                Added condition for shortname to be true to prevent form from submitting
+            -->
+          <button
+            ng-disabled="regForm.$invalid || signUpCtrl.validateShortName(shortname) != true"
+            ng-click="signUpCtrl.submit(firstname,lastname,email,phone,shortname)">Submit</button>
+        
+        </form>
+      </fieldset>
+    
+      <div id="info" ng-if="signUpCtrl.completed">
+        Your information has been saved!
+      </div>
+    
+</div>

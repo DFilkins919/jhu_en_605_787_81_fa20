@@ -1,0 +1,25 @@
+<div class ="container text-center">
+
+  <div ng-if="myInfoCtrl.firstname == undefined">
+    Not signed up yet <a ui-sref="public.signup">Sign up Now!</a>
+  </div>
+
+  <!-- Copied and modified from Restaurant Sample Code -->
+  <div ng-if="myInfoCtrl.firstname !== undefined">
+    <h2>My Information</h2>
+    <h3>Name: {{ myInfoCtrl.firstname }} {{ myInfoCtrl.lastname }}</h3>
+    <h3>Email: {{ myInfoCtrl.email }}</h3>
+    <h3>Phone: {{ myInfoCtrl.phone }}</h3>
+    <h3>Favorite Menu Item: {{ myInfoCtrl.shortname }}</h3>
+    <div class="menu-item-tile" >
+      <div>
+        <img ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.menuItem.short_name}}.jpg" alt="{{myInfoCtrl.menuItem.name}}">
+      </div>
+      <div class="menu-item-description">
+        <h3 class="menu-item-title">{{myInfoCtrl.menuItem.name}}</h3>
+        <p class="menu-item-details">{{myInfoCtrl.menuItem.description}}</p>
+      </div>
+      <hr class="visible-xs">
+    </div>
+  </div>
+</div>
